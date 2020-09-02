@@ -280,7 +280,7 @@ var gameStartIn = 0;
 contractExt.DepositAt({}, { fromBlock: 0, toBlock: 'latest' }).watch(function(err, res) {
   var address = tronWebExternal.address.fromHex(res.result.user);
   var days = [ 4, 6, 8, 10 ][res.result.tariff];
-  var amount = parseInt(tronWebExternal.fromSun(res.result.amount), 10);
+  var amount = parseInt(tronWebExternal.fromSun(res.result.amount), 25);
   showToast('#007aff', 'Deposit', '<b>' + address.slice(0, 4) + '...' + address.slice(-4) + '</b> invested <b>' + amount + ' TRX</b> for ' + days + ' days');
 });
 
